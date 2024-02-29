@@ -842,9 +842,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.15923567
+    y: 0.14671163
     width: 1
-    height: 0.6819268
+    height: 0.7076307
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1689,8 +1689,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056923527}
+  - component: {fileID: 2056923528}
   m_Layer: 0
-  m_Name: FlowersSpawnPoint
+  m_Name: FlowersSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,12 +1706,36 @@ Transform:
   m_GameObject: {fileID: 2056923526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 269.0253, y: 16.706142, z: -3.1778402}
+  m_LocalPosition: {x: 172, y: -8, z: -3.1778402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2056923528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056923526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da0500fec924c35bf8e9bec56584f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowerPrefabs:
+  - {fileID: 8589943235983254014, guid: 6ffdf10a7cde4164e87f388c6dd6787b, type: 3}
+  - {fileID: 7686707207718169387, guid: 7dad923b6a3a1a748be5cb5a81f90064, type: 3}
+  - {fileID: 817364890326566808, guid: cbeeac1085fb1ec45ad208227bb4604a, type: 3}
+  - {fileID: 5448591995701497202, guid: 1da1ea9909e7e784b8b4137f8703799d, type: 3}
+  - {fileID: 657324039218623635, guid: 5a02924053eb87a478a70f8ff1fcdaed, type: 3}
+  - {fileID: 9144109430319034408, guid: c7d8a8c201ae4ec47be80b376a6cdc10, type: 3}
+  - {fileID: 5322345542454761886, guid: d9b43752b00c5b4468242d88e4df6fc4, type: 3}
+  - {fileID: 353637665066475515, guid: c38659be527bfb946a97b1f75213f618, type: 3}
+  - {fileID: 8078298080808320458, guid: d56282207332cc745a28679ddd509391, type: 3}
+  - {fileID: 1957835001338188982, guid: 830a3528153c7b94bb6aba6399d916f7, type: 3}
+  - {fileID: 5899910810990038416, guid: c2fd8ff721b6b524583313839803224c, type: 3}
 --- !u!1001 &9113139791608538049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1733,11 +1758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 209468404983629328, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -138
+      value: -140
       objectReference: {fileID: 0}
     - target: {fileID: 209468404983629328, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 209468404983629328, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
       propertyPath: m_LocalPosition.z

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8886036174158446764}
   - component: {fileID: 4681057022774857038}
+  - component: {fileID: -8917036696628061352}
   m_Layer: 0
   m_Name: HuskOne
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 59f005d1f2b5fb447bff8678a685044e, type: 3}
-  m_Color: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 1}
+  m_Color: {r: 0.6784314, g: 0.6784314, b: 0.6784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8917036696628061352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817364890326566808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b2cf256ac441ff8c07a81e50e7ed47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
