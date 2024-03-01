@@ -28,12 +28,9 @@ namespace Player
             {
                 _direction = Vector3.down;
 
-                if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
-                {
+                if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)) 
                     _direction = Vector3.up * jumpForce;
-                }
             }
-
             characterCont.Move(_direction * Time.deltaTime);
         }
         
