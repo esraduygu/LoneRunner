@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialGameSpeed: 100
-  gameSpeedIncrease: 1
+  gameSpeedIncrease: 15
   gameSpeed: 0
 --- !u!4 &194887315
 Transform:
