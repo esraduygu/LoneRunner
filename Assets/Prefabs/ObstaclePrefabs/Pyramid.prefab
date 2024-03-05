@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4222209645170031906}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.844719, y: -7.3011255, z: -1.7236248}
+  m_LocalPosition: {x: 23.844719, y: 0, z: -1.7236248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3976c0b7a0184ae449a8eeb00c0dcdda, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 5924808252085217077}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.844719, y: 8.998875, z: -1.7236248}
+  m_LocalPosition: {x: 7.844719, y: 16, z: -1.7236248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3976c0b7a0184ae449a8eeb00c0dcdda, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 6794413788755507214}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.2447205, y: -7.3011255, z: -1.7236248}
+  m_LocalPosition: {x: 7.2447205, y: 0, z: -1.7236248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242,7 +242,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3976c0b7a0184ae449a8eeb00c0dcdda, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -278,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 7222291477628215306}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.155281, y: -7.3011255, z: -1.7236248}
+  m_LocalPosition: {x: -8.155281, y: 0, z: -1.7236248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -326,7 +326,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3976c0b7a0184ae449a8eeb00c0dcdda, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -345,8 +345,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8417490241358501558}
-  - component: {fileID: 2009176205121546725}
-  - component: {fileID: 1053262303025530542}
+  - component: {fileID: 4961647149474063220}
+  - component: {fileID: 386819839776878475}
   m_Layer: 0
   m_Name: Pyramid
   m_TagString: Untagged
@@ -367,14 +367,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5525973670553251839}
   - {fileID: 6637415177218171132}
   - {fileID: 7327031047821846905}
   - {fileID: 5389216001795471147}
-  - {fileID: 5525973670553251839}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2009176205121546725
-BoxCollider2D:
+--- !u!60 &4961647149474063220
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -415,10 +415,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1053262303025530542
+  m_Points:
+    m_Paths:
+    - - {x: -16.870224, y: -15.546928}
+      - {x: 32.06971, y: -15.489264}
+      - {x: 31.965355, y: 0.93241113}
+      - {x: 16.68853, y: 1.1852112}
+      - {x: 16.565872, y: 17.522722}
+      - {x: -0.7671881, y: 17.732891}
+      - {x: -0.99861145, y: 1.1927414}
+      - {x: -16.913477, y: 0.8480565}
+  m_UseDelaunayMesh: 0
+--- !u!114 &386819839776878475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

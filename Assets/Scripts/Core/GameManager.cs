@@ -13,8 +13,8 @@ namespace Core
         public GameState State { get; private set; }
         public Action<GameState> OnStateChange;
 
-        public float initialGameSpeed = 100f;
-        public float gameSpeedIncrease = 0.1f;
+        public float initialGameSpeed;
+        public float gameSpeedIncrease;
         public float gameSpeed;
 
         private void Awake()
