@@ -8,6 +8,7 @@ namespace Core
         public enum GameState
         {
             Playing,
+            Dead
         }
     
         public GameState State { get; private set; }
@@ -17,6 +18,11 @@ namespace Core
         public float gameSpeedIncrease;
         public float gameSpeed;
 
+        public void StopPlaying()
+        {
+            gameSpeed = 0f;
+            UpdateState(GameState.Dead);
+        }
         private void Awake()
         {
             StartPlaying();
@@ -33,7 +39,7 @@ namespace Core
             gameSpeed = initialGameSpeed;
             UpdateState(GameState.Playing);
         }
-
+        
         private void IncreaseGameSpeedPerFrame()
         {
             gameSpeed += gameSpeedIncrease * Time.deltaTime;

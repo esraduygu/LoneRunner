@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using Core;
+using Obstacles;
+using UnityEngine;
 
 namespace Player
 {
     public class Player : MonoBehaviour
     {
+        [SerializeField] private GameManager gameManager;
         [SerializeField] private CharacterController characterCont;
         [SerializeField] private float jumpForce;
         [SerializeField] private float gravity;
@@ -34,7 +37,19 @@ namespace Player
             characterCont.Move(_direction * Time.deltaTime);
         }
         
-        
+        private void OnTriggerEnter(Collider collision)
+        {
+            Debug.Log("Girmiyo");
+            if (gameManager.State != GameManager.GameState.Playing)
+                return;
+         
+            if (collision.gameObject.GetComponent<Obstacle>() == null) 
+                return;
+
+            Destroy(gameObject);
+
+            gameManager.StopPlaying();
+        }
 
        
     }

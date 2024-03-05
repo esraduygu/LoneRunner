@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Obstacles
 {
-   [RequireComponent(typeof(Collider2D))]
+   [RequireComponent(typeof(Collider))]
    public class Obstacle : MonoBehaviour
    {
       private GameManager _gameManager;
@@ -17,7 +17,7 @@ namespace Obstacles
       {
          Move();
       }
-
+      
       private void Move()
       {
          transform.position += Vector3.left * (_gameManager.gameSpeed * Time.deltaTime);
