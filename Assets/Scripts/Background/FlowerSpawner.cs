@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Background
@@ -10,10 +9,10 @@ namespace Background
         
         private void Start()
         {
-            InvokeRepeating(nameof(Spawn), 1, 2.5f);
+            InvokeRepeating(nameof(SpawnFlowers), 1, 2.5f);
         }
 
-        private void Spawn()
+        private void SpawnFlowers()
         {
             var randomIndex = Random.Range(0, flowerPrefabs.Length + 4);
             if (randomIndex >= flowerPrefabs.Length)

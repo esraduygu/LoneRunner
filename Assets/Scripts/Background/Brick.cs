@@ -4,7 +4,7 @@ namespace Background
 {
     public class Brick : MonoBehaviour
     {
-        [SerializeField] private float speed;
+        [SerializeField] private GameManager gameManager;
         
         private Vector3 _internalPosition;
 
@@ -15,12 +15,13 @@ namespace Background
 
         private void Update()
         {
-            Move();
+            if (gameManager.State == GameManager.GameState.Playing)
+                Move();
         }
 
         private void Move()
         {
-            _internalPosition += Vector3.left * (speed * Time.deltaTime);
+            _internalPosition += Vector3.left * (gameManager.gameSpeed * Time.deltaTime);
             
             if (_internalPosition.x < -320)
                 _internalPosition.x = 320;
