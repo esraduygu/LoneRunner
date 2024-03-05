@@ -20,8 +20,5 @@ namespace Background
             
             Instantiate(flowerPrefabs[randomIndex], transform.position, Quaternion.identity);
         }
-        
-        
-
     }
 }
