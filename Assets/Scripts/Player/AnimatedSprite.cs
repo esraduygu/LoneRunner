@@ -8,6 +8,7 @@ namespace Player
         [SerializeField] private GameManager gameManager;
         [SerializeField] private Player player;
         [SerializeField] private Animator animator;
+        
         private static readonly int SpeedHash = Animator.StringToHash("speed");
         private static readonly int IsJumpingHash = Animator.StringToHash("isJumping");
 
@@ -25,10 +26,15 @@ namespace Player
 
         private void SetAnimationJumping()
         {
-            if (player.State == Player.PlayerState.Jumping)
-                animator.SetBool(IsJumpingHash, true);
-            else if (player.State == Player.PlayerState.Grounded)
-                animator.SetBool(IsJumpingHash, false);
+            switch (player.State)
+            {
+                case Player.PlayerState.Jumping:
+                    animator.SetBool(IsJumpingHash, true);
+                    break;
+                case Player.PlayerState.Grounded:
+                    animator.SetBool(IsJumpingHash, false);
+                    break;
+            }
         }
     }
 }
