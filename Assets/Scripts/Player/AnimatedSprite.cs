@@ -6,29 +6,29 @@ namespace Player
     public class AnimatedSprite : MonoBehaviour
     {
         [SerializeField] private GameManager gameManager;
-        [SerializeField] private Sprite[] sprites;
-        [SerializeField] private float baseFps;
-        
-        private SpriteRenderer _spriteRenderer;
-        private int _frame;
-
-        private void Awake()
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-        }
+        [SerializeField] private Player player;
+        [SerializeField] private Animator animator;
+        private static readonly int SpeedHash = Animator.StringToHash("speed");
+        private static readonly int IsJumpingHash = Animator.StringToHash("isJumping");
 
         private void Update()
         {
-            if (gameManager.State == GameManager.GameState.Playing)
-                Animate();
-                
+            SetAnimationSpeed();
+            SetAnimationJumping();
         }
 
-        private void Animate()
+        private void SetAnimationSpeed()
         {
-            var fps = baseFps * gameManager.gameSpeed;
-            var spriteIndex = Mathf.FloorToInt(Time.time % 1 * fps) % sprites.Length;
-            _spriteRenderer.sprite = sprites[spriteIndex];
+            if (gameManager.State == GameManager.GameState.Playing)
+                animator.SetFloat(SpeedHash, gameManager.gameSpeed / gameManager.initialGameSpeed);
+        }
+
+        private void SetAnimationJumping()
+        {
+            if (player.State == Player.PlayerState.Jumping)
+                animator.SetBool(IsJumpingHash, true);
+            else if (player.State == Player.PlayerState.Grounded)
+                animator.SetBool(IsJumpingHash, false);
         }
     }
 }

@@ -994,8 +994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialGameSpeed: 100
-  gameSpeedIncrease: 2
+  gameSpeedIncrease: 10
   gameSpeed: 0
+  maxGameSpeed: 400
 --- !u!4 &194887315
 Transform:
   m_ObjectHideFlags: 0
@@ -1330,10 +1331,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.06666666
-    y: 0
-    width: 0.8664112
-    height: 1
+    x: 0
+    y: 0.25186288
+    width: 1
+    height: 0.49543592
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -3039,7 +3040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1952109652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3236,7 +3237,39 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2111756418
+--- !u!114 &2111756416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5759739838941985452, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
+  m_PrefabInstance: {fileID: 9113139791608538049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111756409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc19fcc87c1b4f5a90d9b9392d36c1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &2111756419
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111756409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13e200453653c324ba0480623f3c4b93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2111756420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3249,10 +3282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 194887314}
-  sprites:
-  - {fileID: 21300000, guid: 34f554a7e0fdf834b909a8715542e140, type: 3}
-  - {fileID: 21300000, guid: 3a4fe70db1c038f45aab069a8e852122, type: 3}
-  - {fileID: 21300000, guid: ef1eda701274f0045b212ff14715dc05, type: 3}
+  player: {fileID: 2111756416}
+  animator: {fileID: 2111756419}
 --- !u!1 &2130461993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 856431515970060775, guid: f6b2b54d3b82c9443b238ad0477426dd, type: 3}
@@ -3401,10 +3432,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 673318268113517425, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 2111756418}
+      addedObject: {fileID: 2111756420}
     - targetCorrespondingSourceObject: {fileID: 673318268113517425, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2111756414}
+    - targetCorrespondingSourceObject: {fileID: 673318268113517425, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2111756419}
   m_SourcePrefab: {fileID: 100100000, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
