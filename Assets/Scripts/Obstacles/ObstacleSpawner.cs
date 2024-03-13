@@ -15,13 +15,17 @@ namespace Obstacles
 
         private void SpawnObstacles()
         {
-            const float easyProbability = 0.5f;
-            const float normalProbability = 0.4f;
-            const float hardProbability = 0.1f;
+            const float easyProbability = 0.4f;
+            const float normalProbability = 0.3f;
+            const float hardProbability = 0.2f;
+            const float extremeProbability = 0.1f;
             
-            var index = MathUtilities.PickOne(easyProbability, normalProbability, hardProbability);
+            var index = MathUtilities.PickOne(easyProbability, normalProbability, hardProbability, extremeProbability);
 
-            Instantiate(obstaclePrefabs[index], transform.position, quaternion.identity);
+            var obstaclePrefab = obstaclePrefabs[index];
+            var spawnPos = transform.position;
+            spawnPos.y += obstaclePrefab.transform.position.y;
+            Instantiate(obstaclePrefab, spawnPos, quaternion.identity);
         }
     }
 }

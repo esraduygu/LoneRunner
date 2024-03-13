@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Obstacles
 {
-   [RequireComponent(typeof(Collider))]
    public class Obstacle : MonoBehaviour
    {
       private GameManager _gameManager;
