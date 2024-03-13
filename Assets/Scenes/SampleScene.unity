@@ -2710,7 +2710,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 13718bce9eb4eed47ac1d7ca7ddd85fa, type: 3}
   - {fileID: 8300000, guid: 56d26b1227969b4429440dc4821145d2, type: 3}
   - {fileID: 8300000, guid: 1e20167e1960ae94aa257ecd274043d7, type: 3}
-  player: {fileID: 2111756416}
 --- !u!1 &1660231564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2132672110047996724, guid: f6b2b54d3b82c9443b238ad0477426dd, type: 3}
@@ -4080,6 +4079,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 125
       objectReference: {fileID: 0}
+    - target: {fileID: 5759739838941985452, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
+      propertyPath: sfxManager
+      value: 
+      objectReference: {fileID: 1646925542}
     - target: {fileID: 5759739838941985452, guid: 81224b1596da381419bf4669df7b60fd, type: 3}
       propertyPath: gameManager
       value: 

@@ -43,6 +43,7 @@ namespace Player
                     sfxManager.PlaySound(SfxManager.SfxType.Jump);
                     break;
                 case PlayerState.Dead:
+                    gameManager.StopPlaying();
                     sfxManager.PlaySound(SfxManager.SfxType.Hit, SfxManager.SfxType.Die);
                     break;
             }
@@ -86,9 +87,13 @@ namespace Player
             if (collision.gameObject.GetComponent<Obstacle>() == null) 
                 return;
 
-            Destroy(gameObject);
+            Die();
+        }
 
-            gameManager.StopPlaying();
+        private void Die()
+        {
+            State = PlayerState.Dead;
+            Destroy(gameObject);
         }
     }
 }
