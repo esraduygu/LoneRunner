@@ -2178,7 +2178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1313358729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,6 +2574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646925541}
+  - component: {fileID: 1646925542}
   - component: {fileID: 1646925540}
   m_Layer: 0
   m_Name: AudioManager
@@ -2693,6 +2694,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646925542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646925539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83fff0801374a0fb6a1081da60b7690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 13718bce9eb4eed47ac1d7ca7ddd85fa, type: 3}
+  - {fileID: 8300000, guid: 56d26b1227969b4429440dc4821145d2, type: 3}
+  - {fileID: 8300000, guid: 1e20167e1960ae94aa257ecd274043d7, type: 3}
+  player: {fileID: 2111756416}
 --- !u!1 &1660231564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2132672110047996724, guid: f6b2b54d3b82c9443b238ad0477426dd, type: 3}

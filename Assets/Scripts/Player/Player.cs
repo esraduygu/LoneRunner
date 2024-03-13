@@ -13,15 +13,41 @@ namespace Player
             Dead
         }
 
-        public PlayerState State { get; private set; }
-        
+        [SerializeField] private SfxManager sfxManager;
         [SerializeField] private GameManager gameManager;
         [SerializeField] private CharacterController characterCont;
+        
         [SerializeField] private float jumpForce;
         [SerializeField] private float gravity;
-
-        private Vector3 _direction;
         
+        public PlayerState State
+        {
+            get => _state;
+            private set
+            {
+                if (_state == value) return;
+                
+                _state = value;
+                OnStateChange(value);
+            }
+        }
+        
+        private Vector3 _direction;
+        private PlayerState _state;
+        
+        private void OnStateChange(PlayerState state)
+        {
+            switch (state)
+            {
+                case PlayerState.Jumping:
+                    sfxManager.PlaySound(SfxManager.SfxType.Jump);
+                    break;
+                case PlayerState.Dead:
+                    sfxManager.PlaySound(SfxManager.SfxType.Hit, SfxManager.SfxType.Die);
+                    break;
+            }
+        }
+
         private void OnEnable()
         {
             _direction = Vector3.zero;
@@ -64,7 +90,5 @@ namespace Player
 
             gameManager.StopPlaying();
         }
-
-       
     }
 }

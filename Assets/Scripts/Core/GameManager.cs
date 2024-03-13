@@ -12,7 +12,7 @@ namespace Core
         }
     
         public GameState State { get; private set; }
-        public Action<GameState> OnStateChange;
+        public static Action<GameState> OnStateChange;
 
         public float initialGameSpeed;
         public float gameSpeedIncrease;
