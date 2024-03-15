@@ -57,7 +57,7 @@ namespace Core
         
         private void UpdateScore()
         {
-            score += gameSpeed * Time.deltaTime;
+            score += gameSpeed / 100 * Time.deltaTime;
 
             if (score > bestScore)
             {
