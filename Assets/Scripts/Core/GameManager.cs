@@ -24,6 +24,7 @@ namespace Core
             gameSpeed = 0f;
             UpdateState(GameState.Paused);
         }
+        
         private void Awake()
         {
             StartPlaying();

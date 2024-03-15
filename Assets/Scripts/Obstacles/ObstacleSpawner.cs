@@ -25,6 +25,7 @@ namespace Obstacles
             var obstaclePrefab = obstaclePrefabs[index];
             var spawnPos = transform.position;
             spawnPos.y += obstaclePrefab.transform.position.y;
+            
             Instantiate(obstaclePrefab, spawnPos, quaternion.identity);
         }
     }

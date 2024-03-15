@@ -13,9 +13,9 @@ namespace Player
             Dead
         }
 
-        [SerializeField] private SfxManager sfxManager;
-        [SerializeField] private GameManager gameManager;
         [SerializeField] private CharacterController characterCont;
+        [SerializeField] private GameManager gameManager;
+        [SerializeField] private SfxManager sfxManager;
         
         [SerializeField] private float jumpForce;
         [SerializeField] private float gravity;
