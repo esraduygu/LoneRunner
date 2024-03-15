@@ -14,7 +14,6 @@ namespace UI
         {
             gameManager.OnStateChange += OnStateChange;
         }
-
         
         private void OnStateChange(GameManager.GameState state)
         {

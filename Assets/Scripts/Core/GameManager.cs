@@ -32,7 +32,6 @@ namespace Core
 
         public void Restart()
         {
-            //reset score
             SceneManager.UnloadScene(0);
             SceneManager.LoadScene(0);
         }
