@@ -1,3 +1,4 @@
+using Core;
 using Unity.Mathematics;
 using UnityEngine;
 using Utilities;
@@ -7,6 +8,7 @@ namespace Obstacles
     public class ObstacleSpawner : MonoBehaviour
     {
         [SerializeField] private Obstacle[] obstaclePrefabs;
+        [SerializeField] private GameManager gameManager;
 
         private void Start()
         {
@@ -15,6 +17,9 @@ namespace Obstacles
 
         private void SpawnObstacles()
         {
+            if (gameManager.State != GameManager.GameState.Playing)
+                return;
+            
             const float easyProbability = 0.4f;
             const float normalProbability = 0.3f;
             const float hardProbability = 0.2f;

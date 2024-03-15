@@ -8,6 +8,7 @@ namespace Core
     {
         public enum GameState
         {
+            StartMenu,
             Playing,
             GameOver
         }
@@ -39,8 +40,6 @@ namespace Core
         private void Awake()
         {
             bestScore = PlayerPrefs.GetFloat("BestScore");
-            
-            StartPlaying();
         }
 
         private void Update()
@@ -49,8 +48,13 @@ namespace Core
                 IncreaseGameSpeedPerFrame();
 
             UpdateScore();
-        }
 
+            if (State is GameState.StartMenu && Input.anyKey)
+            {
+                StartPlaying();
+            }
+        }
+        
         private void UpdateScore()
         {
             score += gameSpeed * Time.deltaTime;

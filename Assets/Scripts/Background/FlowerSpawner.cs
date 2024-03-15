@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Background
@@ -6,7 +7,8 @@ namespace Background
     public class FlowerSpawner : MonoBehaviour
     {
         [SerializeField] private GameObject[] flowerPrefabs;
-        
+        [SerializeField] private GameManager gameManager;
+
         private void Start()
         {
             InvokeRepeating(nameof(SpawnFlowers), 1, 2.5f);
@@ -14,6 +16,9 @@ namespace Background
 
         private void SpawnFlowers()
         {
+            if (gameManager.State != GameManager.GameState.Playing)
+                return;
+            
             var randomIndex = Random.Range(0, flowerPrefabs.Length + 4);
             if (randomIndex >= flowerPrefabs.Length)
                 return;

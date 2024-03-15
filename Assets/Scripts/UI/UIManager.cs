@@ -8,6 +8,7 @@ namespace UI
         [SerializeField] private GameManager gameManager;
         [SerializeField] private RectTransform gameOverScreen;
         [SerializeField] private RectTransform gameScreen;
+        [SerializeField] private RectTransform startScreen;
 
         private void Awake()
         {
@@ -34,6 +35,7 @@ namespace UI
         {
             gameOverScreen.gameObject.SetActive(false);
             gameScreen.gameObject.SetActive(false);
+            startScreen.gameObject.SetActive(false);
         }
     }
 }
