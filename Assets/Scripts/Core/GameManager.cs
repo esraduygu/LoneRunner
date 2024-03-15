@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Core
 {
@@ -8,25 +9,37 @@ namespace Core
         public enum GameState
         {
             Playing,
-            Paused
+            GameOver
         }
     
         public GameState State { get; private set; }
-        public static Action<GameState> OnStateChange;
+        public Action<GameState> OnStateChange;
 
         public float initialGameSpeed;
         public float gameSpeedIncrease;
         public float gameSpeed;
         public float maxGameSpeed;
+        public float score;
+        public float bestScore;
+        
 
         public void StopPlaying()
         {
             gameSpeed = 0f;
-            UpdateState(GameState.Paused);
+            UpdateState(GameState.GameOver);
+        }
+
+        public void Restart()
+        {
+            //reset score
+            SceneManager.UnloadScene(0);
+            SceneManager.LoadScene(0);
         }
         
         private void Awake()
         {
+            bestScore = PlayerPrefs.GetFloat("BestScore");
+            
             StartPlaying();
         }
 
@@ -34,6 +47,20 @@ namespace Core
         {
             if (State == GameState.Playing)
                 IncreaseGameSpeedPerFrame();
+
+            UpdateScore();
+        }
+
+        private void UpdateScore()
+        {
+            score += gameSpeed * Time.deltaTime;
+
+            if (score > bestScore)
+            {
+                bestScore = score;
+                PlayerPrefs.SetFloat("BestScore", bestScore);
+                PlayerPrefs.Save();
+            }
         }
 
         private void StartPlaying()
