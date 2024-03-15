@@ -1503,9 +1503,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.015408321
+    y: 0
     width: 1
-    height: 0.9681241
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffcb88ac6b24c12b26ba209bfcaa9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blinkingRate: 1
+  blinkingRate: 4
   text: {fileID: 1215825012}
 --- !u!1 &1229114812
 GameObject:
@@ -3078,7 +3078,7 @@ AudioSource:
   m_GameObject: {fileID: 1646925539}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6d1b0258607d0a44c801d29c0711b6e8, type: 2}
   m_audioClip: {fileID: 8300000, guid: 07f1172c479d6fc4a93bef31123fda76, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
