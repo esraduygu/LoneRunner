@@ -23,24 +23,11 @@ namespace Core
         public float score;
         public float bestScore;
         
-
-        public void StopPlaying()
-        {
-            gameSpeed = 0f;
-            UpdateState(GameState.GameOver);
-        }
-
-        public void Restart()
-        {
-            SceneManager.UnloadScene(0);
-            SceneManager.LoadScene(0);
-        }
-        
         private void Awake()
         {
             bestScore = PlayerPrefs.GetFloat("BestScore");
         }
-
+        
         private void Update()
         {
             if (State == GameState.Playing)
@@ -54,6 +41,30 @@ namespace Core
             }
         }
         
+        private void StartPlaying()
+        {
+            gameSpeed = initialGameSpeed;
+            UpdateState(GameState.Playing);
+        }
+        
+        public void Restart()
+        {
+            SceneManager.UnloadScene(0);
+            SceneManager.LoadScene(0);
+        }
+        
+        public void StopPlaying()
+        {
+            gameSpeed = 0f;
+            UpdateState(GameState.GameOver);
+        }
+        
+        private void IncreaseGameSpeedPerFrame()
+        {
+            gameSpeed += gameSpeedIncrease * Time.deltaTime;
+            gameSpeed = Mathf.Clamp(gameSpeed, initialGameSpeed, maxGameSpeed);
+        }
+        
         private void UpdateScore()
         {
             score += gameSpeed / 100 * Time.deltaTime;
@@ -64,18 +75,6 @@ namespace Core
                 PlayerPrefs.SetFloat("BestScore", bestScore);
                 PlayerPrefs.Save();
             }
-        }
-
-        private void StartPlaying()
-        {
-            gameSpeed = initialGameSpeed;
-            UpdateState(GameState.Playing);
-        }
-        
-        private void IncreaseGameSpeedPerFrame()
-        {
-            gameSpeed += gameSpeedIncrease * Time.deltaTime;
-            gameSpeed = Mathf.Clamp(gameSpeed, initialGameSpeed, maxGameSpeed);
         }
         
         private void UpdateState(GameState state)

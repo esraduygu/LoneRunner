@@ -11,6 +11,11 @@ namespace UI
 
         private void Update()
         {
+            Blink();
+        }
+
+        private void Blink()
+        {
             text.alpha = Mathf.Sin(Time.time * blinkingRate) >= 0 ? 1 : 0;
         }
     }
